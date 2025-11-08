@@ -1,14 +1,14 @@
  /*
- * HexGL
+ * GridPulse
  * @author Thibaut 'BKcore' Despoulain <http://bkcore.com>
  * @license This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License.
  *          To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
  */
 
 var bkcore = bkcore || {};
-bkcore.hexgl = bkcore.hexgl || {};
+bkcore.gridpulse = bkcore.gridpulse || {};
 
-bkcore.hexgl.ShipEffects = function(opts)
+bkcore.gridpulse.ShipEffects = function(opts)
 {
 	this.scene = opts.scene;
 	this.shipControls = opts.shipControls;
@@ -103,7 +103,7 @@ bkcore.hexgl.ShipEffects = function(opts)
 	}
 }
 
-bkcore.hexgl.ShipEffects.prototype.update = function(dt)
+bkcore.gridpulse.ShipEffects.prototype.update = function(dt)
 {
 	var boostRatio, opacity, scale, intensity, random;
 

@@ -1,10 +1,10 @@
 {
-    "name": "HexGL",
-    "description": "HexGL v1.0.1-ffos",
+    "name": "GridPulse",
+    "description": "GridPulse - Futuristic WebGL racing game",
     "package_path" : "package.zip",
-    "version": "1",
+    "version": "2.0.0",
     "developer": {
-        "name": "Thibaut Despoulain (BKcore)",
-        "url": "http://bkcore.com"
+        "name": "GridPulse Team",
+        "url": ""
     }
 }

@@ -1,6 +1,6 @@
 CACHE MANIFEST
-# v1.0.1-ffos-201302192207
-# HexGL by Thibaut Despoulain (BKcore.com)
+# GridPulse v2.0.0
+# Based on HexGL by Thibaut Despoulain
 index.html
 css/BebasNeue-webfont.eot
 css/BebasNeue-webfont.ttf
@@ -31,14 +31,14 @@ bkcore/threejs/RenderManager.js
 bkcore/threejs/Shaders.js
 bkcore/threejs/Particles.js
 bkcore/threejs/Loader.js
-bkcore/hexgl/HUD.js
-bkcore/hexgl/RaceData.js
-bkcore/hexgl/ShipControls.js
-bkcore/hexgl/ShipEffects.js
-bkcore/hexgl/CameraChase.js
-bkcore/hexgl/Gameplay.js
-bkcore/hexgl/tracks/Cityscape.js
-bkcore/hexgl/HexGL.js
+bkcore/gridpulse/HUD.js
+bkcore/gridpulse/RaceData.js
+bkcore/gridpulse/ShipControls.js
+bkcore/gridpulse/ShipEffects.js
+bkcore/gridpulse/CameraChase.js
+bkcore/gridpulse/Gameplay.js
+bkcore/gridpulse/tracks/Cityscape.js
+bkcore/gridpulse/GridPulse.js
 geometries/bonus/base/base.js
 geometries/booster/booster.js
 geometries/ships/feisar/feisar.js

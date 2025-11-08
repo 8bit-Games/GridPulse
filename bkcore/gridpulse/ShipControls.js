@@ -1,14 +1,14 @@
  /*
- * HexGL
+ * GridPulse
  * @author Thibaut 'BKcore' Despoulain <http://bkcore.com>
  * @license This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License.
  *          To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
  */
 
 var bkcore = bkcore || {};
-bkcore.hexgl = bkcore.hexgl || {};
+bkcore.gridpulse = bkcore.gridpulse || {};
 
-bkcore.hexgl.ShipControls = function(ctx)
+bkcore.gridpulse.ShipControls = function(ctx)
 {
 	var self = this;
 	var domElement = ctx.document;
@@ -292,14 +292,14 @@ bkcore.hexgl.ShipControls = function(ctx)
 	domElement.addEventListener('keyup', onKeyUp, false);
 };
 
-bkcore.hexgl.ShipControls.prototype.control = function(threeMesh)
+bkcore.gridpulse.ShipControls.prototype.control = function(threeMesh)
 {
 	this.mesh = threeMesh;
 	this.mesh.martixAutoUpdate = false;
 	this.dummy.position = this.mesh.position;
 };
 
-bkcore.hexgl.ShipControls.prototype.reset = function(position, rotation)
+bkcore.gridpulse.ShipControls.prototype.reset = function(position, rotation)
 {
 	this.resetPos = position;
 	this.resetRot = rotation;
@@ -325,7 +325,7 @@ bkcore.hexgl.ShipControls.prototype.reset = function(position, rotation)
 	this.mesh.applyMatrix(this.dummy.matrix);
 }
 
-bkcore.hexgl.ShipControls.prototype.terminate = function()
+bkcore.gridpulse.ShipControls.prototype.terminate = function()
 {
 	this.destroy();
 
@@ -336,7 +336,7 @@ bkcore.hexgl.ShipControls.prototype.terminate = function()
 	}
 }
 
-bkcore.hexgl.ShipControls.prototype.destroy = function()
+bkcore.gridpulse.ShipControls.prototype.destroy = function()
 {
 	bkcore.Audio.play('destroyed');
 	bkcore.Audio.stop('bg');
@@ -349,7 +349,7 @@ bkcore.hexgl.ShipControls.prototype.destroy = function()
 	this.collision.right = false;
 }
 
-bkcore.hexgl.ShipControls.prototype.fall = function()
+bkcore.gridpulse.ShipControls.prototype.fall = function()
 {
 	this.active = false;
 	this.collision.front = false;
@@ -362,7 +362,7 @@ bkcore.hexgl.ShipControls.prototype.fall = function()
 	}, 1500);
 }
 
-bkcore.hexgl.ShipControls.prototype.update = function(dt)
+bkcore.gridpulse.ShipControls.prototype.update = function(dt)
 {
 	if(this.falling)
 	{
@@ -542,7 +542,7 @@ bkcore.hexgl.ShipControls.prototype.update = function(dt)
 	bkcore.Audio.setListenerVelocity(this.currentVelocity);
 };
 
-bkcore.hexgl.ShipControls.prototype.teleport = function(pos, quat)
+bkcore.gridpulse.ShipControls.prototype.teleport = function(pos, quat)
 {
 	this.quaternion.copy(quat);
 	this.dummy.quaternion.copy(this.quaternion);
@@ -581,7 +581,7 @@ bkcore.hexgl.ShipControls.prototype.teleport = function(pos, quat)
 	}
 }
 
-bkcore.hexgl.ShipControls.prototype.boosterCheck = function(dt)
+bkcore.gridpulse.ShipControls.prototype.boosterCheck = function(dt)
 {
 	if(!this.collisionMap || !this.collisionMap.loaded)
 		return false;
@@ -606,7 +606,7 @@ bkcore.hexgl.ShipControls.prototype.boosterCheck = function(dt)
 	this.movement.z += this.boost * dt;
 }
 
-bkcore.hexgl.ShipControls.prototype.collisionCheck = function(dt)
+bkcore.gridpulse.ShipControls.prototype.collisionCheck = function(dt)
 {
 	if(!this.collisionDetection || !this.collisionMap || !this.collisionMap.loaded)
 		return false;
@@ -694,7 +694,7 @@ bkcore.hexgl.ShipControls.prototype.collisionCheck = function(dt)
 	}
 }
 
-bkcore.hexgl.ShipControls.prototype.heightCheck = function(dt)
+bkcore.gridpulse.ShipControls.prototype.heightCheck = function(dt)
 {
 	if(!this.heightMap || !this.heightMap.loaded)
 		return false;
@@ -756,7 +756,7 @@ bkcore.hexgl.ShipControls.prototype.heightCheck = function(dt)
 		this.tiltTarget = Math.atan2(nheight-height, 5.0)*this.tiltScale;
 };
 
-bkcore.hexgl.ShipControls.prototype.getRealSpeed = function(scale)
+bkcore.gridpulse.ShipControls.prototype.getRealSpeed = function(scale)
 {
 	return Math.round(
 		(this.speed+this.boost)
@@ -764,7 +764,7 @@ bkcore.hexgl.ShipControls.prototype.getRealSpeed = function(scale)
 	);
 };
 
-bkcore.hexgl.ShipControls.prototype.getRealSpeedRatio = function()
+bkcore.gridpulse.ShipControls.prototype.getRealSpeedRatio = function()
 {
 	return Math.min(
 		this.maxSpeed,
@@ -772,22 +772,22 @@ bkcore.hexgl.ShipControls.prototype.getRealSpeedRatio = function()
 	) / this.maxSpeed;
 };
 
-bkcore.hexgl.ShipControls.prototype.getSpeedRatio = function()
+bkcore.gridpulse.ShipControls.prototype.getSpeedRatio = function()
 {
 	return (this.speed+this.boost)/ this.maxSpeed;
 };
 
-bkcore.hexgl.ShipControls.prototype.getBoostRatio = function()
+bkcore.gridpulse.ShipControls.prototype.getBoostRatio = function()
 {
 	return this.boost / this.boosterSpeed;
 };
 
-bkcore.hexgl.ShipControls.prototype.getShieldRatio = function()
+bkcore.gridpulse.ShipControls.prototype.getShieldRatio = function()
 {
 	return this.shield / this.maxShield;
 };
 
-bkcore.hexgl.ShipControls.prototype.getShield = function(scale)
+bkcore.gridpulse.ShipControls.prototype.getShield = function(scale)
 {
 	return Math.round(
 		this.shield
@@ -795,12 +795,12 @@ bkcore.hexgl.ShipControls.prototype.getShield = function(scale)
 	);
 };
 
-bkcore.hexgl.ShipControls.prototype.getPosition = function()
+bkcore.gridpulse.ShipControls.prototype.getPosition = function()
 {
 	return this.dummy.position;
 }
 
-bkcore.hexgl.ShipControls.prototype.getQuaternion = function()
+bkcore.gridpulse.ShipControls.prototype.getQuaternion = function()
 {
 	return this.dummy.quaternion;
 }

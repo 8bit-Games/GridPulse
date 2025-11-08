@@ -1,7 +1,7 @@
 $ = (_) -> document.getElementById _
 
 init = (controlType, quality, hud, godmode) ->
-  hexGL = new bkcore.hexgl.HexGL(
+  gridPulse = new bkcore.gridpulse.GridPulse(
     document: document
     width: window.innerWidth
     height: window.innerHeight
@@ -15,16 +15,16 @@ init = (controlType, quality, hud, godmode) ->
     godmode: godmode
     track: 'Cityscape'
   )
-  window.hexGL=hexGL
+  window.gridPulse=gridPulse
 
   progressbar = $ 'progressbar'
-  hexGL.load(
+  gridPulse.load(
     onLoad: ->
       console.log 'LOADED.'
-      hexGL.init()
+      gridPulse.init()
       $('step-3').style.display = 'none'
       $('step-4').style.display = 'block'
-      hexGL.start()
+      gridPulse.start()
     onError: (s) ->
       console.error "Error loading #{ s }."
     onProgress: (p, t, n) ->
