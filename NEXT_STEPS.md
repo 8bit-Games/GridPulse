@@ -48,7 +48,7 @@ These files need to be migrated to get the game working:
 | `bkcore/gridpulse/GridPulse.js` | `src/core/GridPulse.ts` | ⚠️ **STUB** - Structure complete, needs dependencies |
 | `bkcore/gridpulse/Gameplay.js` | `src/core/Gameplay.ts` | ✅ **DONE** |
 | `bkcore/gridpulse/RaceData.js` | `src/core/RaceData.ts` | ✅ **DONE** |
-| `bkcore/gridpulse/Ladder.js` | `src/core/Ladder.ts` | ❌ Not migrated |
+| `bkcore/gridpulse/Ladder.js` | `src/core/Ladder.ts` | ✅ **DONE** |
 
 **Complexity:** High - These are the core game engine files
 **Estimated Time:** 2-3 hours (GridPulse/Gameplay/RaceData done! Need Ladder + Track + Ship/HUD to complete)
@@ -92,10 +92,10 @@ These files need to be migrated to get the game working:
 
 | Legacy File | New Location | Status |
 |------------|--------------|--------|
-| `bkcore/Audio.js` | `src/audio/AudioManager.ts` | ❌ Not migrated |
+| `bkcore/Audio.js` | `src/audio/AudioManager.ts` | ✅ **DONE** |
 
 **Complexity:** Medium - Web Audio API is stable
-**Estimated Time:** 2-3 hours
+**Estimated Time:** 2-3 hours (COMPLETE!)
 
 ### Priority 6: Tracks
 
