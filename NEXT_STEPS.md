@@ -68,14 +68,14 @@ These files need to be migrated to get the game working:
 |------------|--------------|--------|
 | `bkcore/gridpulse/CameraChase.js` | `src/rendering/CameraChase.ts` | ✅ **DONE** |
 | `bkcore/gridpulse/HUD.js` | `src/rendering/HUD.ts` | ✅ **DONE** |
-| `bkcore/gridpulse/ShipEffects.js` | `src/rendering/ShipEffects.ts` | ❌ Not migrated |
+| `bkcore/gridpulse/ShipEffects.js` | `src/rendering/ShipEffects.ts` | ✅ **DONE** |
 | `bkcore/threejs/RenderManager.js` | `src/rendering/RenderManager.ts` | ✅ **DONE** |
-| `bkcore/threejs/Shaders.js` | `src/rendering/Shaders.ts` | ❌ Not migrated |
-| `bkcore/threejs/Particles.js` | `src/rendering/Particles.ts` | ❌ Not migrated |
+| `bkcore/threejs/Shaders.js` | `src/rendering/Shaders.ts` | ✅ **DONE** |
+| `bkcore/threejs/Particles.js` | `src/rendering/Particles.ts` | ✅ **DONE** |
 | `bkcore/threejs/Loader.js` | `src/rendering/Loader.ts` | ✅ **DONE** |
 
 **Complexity:** Medium-High - Three.js API updates needed
-**Estimated Time:** 3-4 hours (Loader + RenderManager done, need Shaders + Particles + Camera/HUD/Effects)
+**Estimated Time:** 3-4 hours (COMPLETE! All rendering modules migrated)
 
 ### Priority 4: Input Controllers
 
