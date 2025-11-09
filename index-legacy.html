@@ -62,7 +62,7 @@
       <h3>GridPulse</h3>
       <p><b>Based on HexGL</b><br>Original by Thibaut Despoulain (BKcore)</p>
       <p><b>Original Contributors</b><br>townxelliot<br>mahesh.kk</p>
-      <p><b>Technologies</b><br>WebGL<br>JavaScript/TypeScript<br>Three.js<br>Vite</p>
+      <p><b>Technologies</b><br>WebGL<br>JavaScript<br>CoffeeScript<br>Three.js<br>LeapMotion</p>
       <h3>Graphics</h3>
       <p><b>Ship base model</b><br>Charnel</p>
       <p><b>Track texture</b><br>Nobiax</p>
@@ -71,7 +71,45 @@
 
     <div id="leapinfo" style="display: none"></div>
 
-    <!-- Modern ES module entry point - Vite will handle all dependencies -->
-    <script type="module" src="/src/main.ts"></script>
+    <script src="libs/leap-0.4.1.min.js"></script>
+    <script src="libs/Three.dev.js"></script>
+    <script src="libs/ShaderExtras.js"></script>
+    <script src="libs/postprocessing/EffectComposer.js"></script>
+    <script src="libs/postprocessing/RenderPass.js"></script>
+    <script src="libs/postprocessing/BloomPass.js"></script>
+    <script src="libs/postprocessing/ShaderPass.js"></script>
+    <script src="libs/postprocessing/MaskPass.js"></script>
+    <script src="libs/Detector.js"></script>
+    <script src="libs/Stats.js"></script>
+    <script src="libs/DAT.GUI.min.js"></script>
+
+    <script src="bkcore.coffee/controllers/TouchController.js"></script>
+    <script src="bkcore.coffee/controllers/OrientationController.js"></script>
+    <script src="bkcore.coffee/controllers/GamepadController.js"></script>
+
+    <script src="bkcore.coffee/Timer.js"></script>
+    <script src="bkcore.coffee/ImageData.js"></script>
+    <script src="bkcore.coffee/Utils.js"></script>
+
+    <script src="bkcore/threejs/RenderManager.js"></script>
+    <script src="bkcore/threejs/Shaders.js"></script>
+    <script src="bkcore/threejs/Particles.js"></script>
+    <script src="bkcore/threejs/Loader.js"></script>
+
+    <script src="bkcore/Audio.js"></script>
+
+    <script src="bkcore/gridpulse/HUD.js"></script>
+    <script src="bkcore/gridpulse/RaceData.js"></script>
+    <script src="bkcore/gridpulse/ShipControls.js"></script>
+    <script src="bkcore/gridpulse/ShipEffects.js"></script>
+    <script src="bkcore/gridpulse/CameraChase.js"></script>
+    <script src="bkcore/gridpulse/Gameplay.js"></script>
+
+    <script src="bkcore/gridpulse/tracks/Cityscape.js"></script>
+
+    <script src="bkcore/gridpulse/GridPulse.js"></script>
+
+    <script src="launch.js"></script>
+
   </body>
 </html>
