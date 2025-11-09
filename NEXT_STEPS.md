@@ -57,10 +57,10 @@ These files need to be migrated to get the game working:
 
 | Legacy File | New Location | Status |
 |------------|--------------|--------|
-| `bkcore/gridpulse/ShipControls.js` | `src/physics/ShipControls.ts` | ❌ Not migrated |
+| `bkcore/gridpulse/ShipControls.js` | `src/physics/ShipControls.ts` | ✅ **DONE** |
 
 **Complexity:** High - Complex physics calculations
-**Estimated Time:** 3-4 hours
+**Estimated Time:** 3-4 hours (COMPLETE!)
 
 ### Priority 3: Rendering System
 
