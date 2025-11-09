@@ -46,12 +46,12 @@ These files need to be migrated to get the game working:
 | Legacy File | New Location | Status |
 |------------|--------------|--------|
 | `bkcore/gridpulse/GridPulse.js` | `src/core/GridPulse.ts` | ⚠️ **STUB** - Structure complete, needs dependencies |
-| `bkcore/gridpulse/Gameplay.js` | `src/core/Gameplay.ts` | ❌ Not migrated |
-| `bkcore/gridpulse/RaceData.js` | `src/core/RaceData.ts` | ❌ Not migrated |
+| `bkcore/gridpulse/Gameplay.js` | `src/core/Gameplay.ts` | ✅ **DONE** |
+| `bkcore/gridpulse/RaceData.js` | `src/core/RaceData.ts` | ✅ **DONE** |
 | `bkcore/gridpulse/Ladder.js` | `src/core/Ladder.ts` | ❌ Not migrated |
 
 **Complexity:** High - These are the core game engine files
-**Estimated Time:** 4-6 hours (GridPulse stub done, needs Gameplay/RaceData/Track modules)
+**Estimated Time:** 2-3 hours (GridPulse/Gameplay/RaceData done! Need Ladder + Track + Ship/HUD to complete)
 
 ### Priority 2: Physics & Ship Controls
 
