@@ -66,8 +66,8 @@ These files need to be migrated to get the game working:
 
 | Legacy File | New Location | Status |
 |------------|--------------|--------|
-| `bkcore/gridpulse/CameraChase.js` | `src/rendering/CameraChase.ts` | ❌ Not migrated |
-| `bkcore/gridpulse/HUD.js` | `src/rendering/HUD.ts` | ❌ Not migrated |
+| `bkcore/gridpulse/CameraChase.js` | `src/rendering/CameraChase.ts` | ✅ **DONE** |
+| `bkcore/gridpulse/HUD.js` | `src/rendering/HUD.ts` | ✅ **DONE** |
 | `bkcore/gridpulse/ShipEffects.js` | `src/rendering/ShipEffects.ts` | ❌ Not migrated |
 | `bkcore/threejs/RenderManager.js` | `src/rendering/RenderManager.ts` | ✅ **DONE** |
 | `bkcore/threejs/Shaders.js` | `src/rendering/Shaders.ts` | ❌ Not migrated |
