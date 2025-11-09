@@ -81,12 +81,12 @@ These files need to be migrated to get the game working:
 
 | Legacy File | New Location | Status |
 |------------|--------------|--------|
-| `bkcore.coffee/controllers/TouchController.js` | `src/input/TouchController.ts` | ❌ Not migrated |
-| `bkcore.coffee/controllers/GamepadController.js` | `src/input/GamepadController.ts` | ❌ Not migrated |
-| `bkcore.coffee/controllers/OrientationController.js` | `src/input/OrientationController.ts` | ❌ Not migrated |
+| `bkcore.coffee/controllers/TouchController.js` | `src/input/TouchController.ts` | ✅ **DONE** |
+| `bkcore.coffee/controllers/GamepadController.js` | `src/input/GamepadController.ts` | ✅ **DONE** |
+| `bkcore.coffee/controllers/OrientationController.js` | `src/input/OrientationController.ts` | ✅ **DONE** |
 
 **Complexity:** Medium
-**Estimated Time:** 3-4 hours
+**Estimated Time:** 3-4 hours (COMPLETE!)
 
 ### Priority 5: Audio System
 
