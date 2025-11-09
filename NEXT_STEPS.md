@@ -45,13 +45,13 @@ These files need to be migrated to get the game working:
 
 | Legacy File | New Location | Status |
 |------------|--------------|--------|
-| `bkcore/gridpulse/GridPulse.js` | `src/core/GridPulse.ts` | ❌ Not migrated |
+| `bkcore/gridpulse/GridPulse.js` | `src/core/GridPulse.ts` | ⚠️ **STUB** - Structure complete, needs dependencies |
 | `bkcore/gridpulse/Gameplay.js` | `src/core/Gameplay.ts` | ❌ Not migrated |
 | `bkcore/gridpulse/RaceData.js` | `src/core/RaceData.ts` | ❌ Not migrated |
 | `bkcore/gridpulse/Ladder.js` | `src/core/Ladder.ts` | ❌ Not migrated |
 
 **Complexity:** High - These are the core game engine files
-**Estimated Time:** 6-8 hours
+**Estimated Time:** 4-6 hours (GridPulse stub done, needs Gameplay/RaceData/Track modules)
 
 ### Priority 2: Physics & Ship Controls
 
@@ -69,13 +69,13 @@ These files need to be migrated to get the game working:
 | `bkcore/gridpulse/CameraChase.js` | `src/rendering/CameraChase.ts` | ❌ Not migrated |
 | `bkcore/gridpulse/HUD.js` | `src/rendering/HUD.ts` | ❌ Not migrated |
 | `bkcore/gridpulse/ShipEffects.js` | `src/rendering/ShipEffects.ts` | ❌ Not migrated |
-| `bkcore/threejs/RenderManager.js` | `src/rendering/RenderManager.ts` | ❌ Not migrated |
+| `bkcore/threejs/RenderManager.js` | `src/rendering/RenderManager.ts` | ✅ **DONE** |
 | `bkcore/threejs/Shaders.js` | `src/rendering/Shaders.ts` | ❌ Not migrated |
 | `bkcore/threejs/Particles.js` | `src/rendering/Particles.ts` | ❌ Not migrated |
 | `bkcore/threejs/Loader.js` | `src/rendering/Loader.ts` | ✅ **DONE** |
 
 **Complexity:** Medium-High - Three.js API updates needed
-**Estimated Time:** 6-8 hours
+**Estimated Time:** 3-4 hours (Loader + RenderManager done, need Shaders + Particles + Camera/HUD/Effects)
 
 ### Priority 4: Input Controllers
 
