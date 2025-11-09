@@ -10,66 +10,55 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="css/multi.css" type="text/css" charset="utf-8">
-    <link rel="stylesheet" href="css/fonts.css" type="text/css" charset="utf-8">
+    <!-- Modern UI styles -->
+    <link rel="stylesheet" href="/src/ui/ui-styles.css" type="text/css" charset="utf-8">
     <style>
       body {
-        padding:0;
-        margin:0;
+        padding: 0;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: #0a0e27;
+        color: #fff;
+        overflow: hidden;
       }
-      canvas { pointer-events:none; width: 100%;}
-      #overlay{
-        position: absolute;
-        z-index: 9999;
+
+      /* Game container */
+      #main {
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      /* HUD overlay */
+      #overlay {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
       }
     </style>
   </head>
 
   <body>
-    <div id="step-1">
-      <div id="global"></div>
-      <div id="title">
-      </div>
-      <div id="menucontainer">
-        <div id="menu">
-          <div id="start">Start</div>
-          <div id="s-controlType">Controls: Keyboard</div>
-          <div id="s-quality">Quality: High</div>
-          <div id="s-hud">HUD: On</div>
-          <div id="s-godmode" style="display: none">Godmode: Off</div>
-          <div id="s-credits">Credits</div>
-        </div>
-      </div>
-    </div>
-    <div id="step-2" style="display: none">
-      <div id="ctrl-help">Click/Touch to continue.</div>
-    </div>
-    <div id="step-3" style="display: none">
-      <div id="progressbar"></div>
-    </div>
-    <div id="step-4" style="display: none">
-      <div id="overlay"></div>
-      <div id="main"></div>
-    </div>
-    <div id="step-5" style="display: none">
-      <div id="time"></div>
-      <div id="ctrl-help">Click/Touch to continue.</div>
-    </div>
-    <div id="credits" style="display: none">
-      <h3>GridPulse</h3>
-      <p><b>Based on HexGL</b><br>Original by Thibaut Despoulain (BKcore)</p>
-      <p><b>Original Contributors</b><br>townxelliot<br>mahesh.kk</p>
-      <p><b>Technologies</b><br>WebGL<br>JavaScript/TypeScript<br>Three.js<br>Vite</p>
-      <h3>Graphics</h3>
-      <p><b>Ship base model</b><br>Charnel</p>
-      <p><b>Track texture</b><br>Nobiax</p>
-      <h4>Click anywhere to continue.</h4>
-    </div>
+    <!-- Main game container -->
+    <div id="main"></div>
 
-    <div id="leapinfo" style="display: none"></div>
+    <!-- HUD overlay (canvas-based UI) -->
+    <div id="overlay"></div>
+
+    <!-- UI screens will be dynamically created by UIManager -->
 
     <!-- Modern ES module entry point - Vite will handle all dependencies -->
     <script type="module" src="/src/main.ts"></script>
