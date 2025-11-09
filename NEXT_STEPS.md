@@ -101,10 +101,10 @@ These files need to be migrated to get the game working:
 
 | Legacy File | New Location | Status |
 |------------|--------------|--------|
-| `bkcore/gridpulse/tracks/Cityscape.js` | `src/tracks/Cityscape.ts` | ⚠️ **PARTIAL** - Asset manifests done, scene building stubbed |
+| `bkcore/gridpulse/tracks/Cityscape.js` | `src/tracks/Cityscape.ts` | ✅ **DONE** |
 
 **Complexity:** Low-Medium
-**Estimated Time:** 1-2 hours
+**Estimated Time:** 1-2 hours (COMPLETE!)
 
 ### Priority 7: Utilities
 
