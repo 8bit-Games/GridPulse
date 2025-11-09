@@ -23,6 +23,8 @@ GridPulse's code and resources are licensed under the *MIT License* (see LICENSE
 
 ## Installation
 
+### Legacy Version (Current)
+
 	cd ~/
 	git clone [repository-url]
 	cd GridPulse
@@ -31,6 +33,19 @@ GridPulse's code and resources are licensed under the *MIT License* (see LICENSE
 Then open http://localhost:8000 in your browser.
 
 To use full size textures, swap the two textures/ and textures.full/ directories.
+
+### Modern Development Setup (In Progress)
+
+GridPulse is being modernized with a modern build system. To use the development version:
+
+```bash
+cd GridPulse
+npm install          # Install dependencies
+npm run dev          # Start development server
+npm run build        # Build for production
+```
+
+**Note:** The modern build system is currently in Phase 1 setup. See `MIGRATION_GUIDE.md` for details.
 
 ## Features
 
@@ -45,3 +60,41 @@ To use full size textures, swap the two textures/ and textures.full/ directories
 ## Development
 
 This project is actively being modernized and improved. Contributions are welcome!
+
+### Modernization Status
+
+GridPulse is undergoing a comprehensive modernization effort:
+
+**✅ Phase 1: Foundation - IN PROGRESS**
+- Modern build system (Vite)
+- Package management (npm)
+- Code quality tools (ESLint, Prettier)
+- TypeScript support
+- ES6 module system
+
+**📋 Upcoming Phases:**
+- Phase 2: Three.js update (r53 → r160+)
+- Phase 3: TypeScript migration
+- Phase 4: Performance optimizations
+- Phase 5+: New features (multiplayer, level editor, enhanced graphics)
+
+See `MODERNIZATION_PLAN.md` for the complete roadmap and `MIGRATION_GUIDE.md` for technical details.
+
+### Contributing
+
+Contributions are welcome! Areas where help is needed:
+- Visual assets creation (see `REBRANDING_ASSETS.md`)
+- Code modernization (see `MIGRATION_GUIDE.md`)
+- Bug fixes and testing
+- Documentation improvements
+
+### Development Scripts
+
+```bash
+npm run dev         # Start development server
+npm run build       # Build for production
+npm run preview     # Preview production build
+npm run lint        # Lint code
+npm run format      # Format code
+npm run type-check  # Type check TypeScript
+```
