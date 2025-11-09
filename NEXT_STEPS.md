@@ -72,7 +72,7 @@ These files need to be migrated to get the game working:
 | `bkcore/threejs/RenderManager.js` | `src/rendering/RenderManager.ts` | ❌ Not migrated |
 | `bkcore/threejs/Shaders.js` | `src/rendering/Shaders.ts` | ❌ Not migrated |
 | `bkcore/threejs/Particles.js` | `src/rendering/Particles.ts` | ❌ Not migrated |
-| `bkcore/threejs/Loader.js` | `src/rendering/Loader.ts` | ❌ Not migrated |
+| `bkcore/threejs/Loader.js` | `src/rendering/Loader.ts` | ✅ **DONE** |
 
 **Complexity:** Medium-High - Three.js API updates needed
 **Estimated Time:** 6-8 hours
@@ -112,7 +112,7 @@ These files need to be migrated to get the game working:
 |------------|--------------|--------|
 | `bkcore.coffee/Timer.js` | `src/utils/Timer.ts` | ✅ **DONE** |
 | `bkcore.coffee/Utils.js` | `src/utils/Utils.ts` | ✅ **DONE** |
-| `bkcore.coffee/ImageData.js` | `src/utils/ImageData.ts` | ❌ Not migrated |
+| `bkcore.coffee/ImageData.js` | `src/utils/ImageData.ts` | ✅ **DONE** |
 
 **Complexity:** Low
 **Estimated Time:** 1 hour
