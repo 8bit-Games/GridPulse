@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Libraries (third-party)
+libs/
+
+# Legacy code
+bkcore.coffee/
+
+# Assets
+*.min.js
+*.min.css
+
+# Config
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

@@ -1,5 +1,5 @@
  /*
- * HexGL
+ * GridPulse
  * @author Thibaut 'BKcore' Despoulain <http://bkcore.com>
  * @license This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License.
  *          To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
@@ -9,9 +9,9 @@
 'v1.0.1';
 
 var bkcore = bkcore || {};
-bkcore.hexgl = bkcore.hexgl || {};
+bkcore.gridpulse = bkcore.gridpulse || {};
 
-bkcore.hexgl.HexGL = function(opts)
+bkcore.gridpulse.GridPulse = function(opts)
 {
 	var self = this;
 
@@ -27,7 +27,7 @@ bkcore.hexgl.HexGL = function(opts)
 	this.difficulty = opts.difficulty == undefined ? 0 : opts.difficulty;
 	this.player = opts.player == undefined ? "Anonym" : opts.player;
 
-	this.track = bkcore.hexgl.tracks[ opts.track == undefined ? 'Cityscape' : opts.track ];
+	this.track = bkcore.gridpulse.tracks[ opts.track == undefined ? 'Cityscape' : opts.track ];
 
 	this.mode = opts.mode == undefined ? 'timeattack' : opts.mode;
 
@@ -89,7 +89,7 @@ bkcore.hexgl.HexGL = function(opts)
 	this.document.addEventListener('keydown', onKeyPress, false);
 }
 
-bkcore.hexgl.HexGL.prototype.start = function()
+bkcore.gridpulse.GridPulse.prototype.start = function()
 {
 
 	this.manager.setCurrent("game");
@@ -108,7 +108,7 @@ bkcore.hexgl.HexGL.prototype.start = function()
 	this.initGameplay();
 }
 
-bkcore.hexgl.HexGL.prototype.reset = function()
+bkcore.gridpulse.GridPulse.prototype.reset = function()
 {
 	this.manager.get('game').objects.lowFPS = 0;
 	this.gameplay.start();
@@ -120,14 +120,14 @@ bkcore.hexgl.HexGL.prototype.reset = function()
 	bkcore.Audio.play('wind');
 }
 
-bkcore.hexgl.HexGL.prototype.restart = function()
+bkcore.gridpulse.GridPulse.prototype.restart = function()
 {
 	try{ this.document.getElementById('finish').style.display = 'none'; }
 	catch(e){};
 	this.reset();
 }
 
-bkcore.hexgl.HexGL.prototype.update = function()
+bkcore.gridpulse.GridPulse.prototype.update = function()
 {
 	if(!this.active) return;
 
@@ -137,7 +137,7 @@ bkcore.hexgl.HexGL.prototype.update = function()
 	this.manager.renderCurrent();
 }
 
-bkcore.hexgl.HexGL.prototype.init = function()
+bkcore.gridpulse.GridPulse.prototype.init = function()
 {
 	this.initHUD();
 	
@@ -148,16 +148,16 @@ bkcore.hexgl.HexGL.prototype.init = function()
 	this.initGameComposer();
 }
 
-bkcore.hexgl.HexGL.prototype.load = function(opts)
+bkcore.gridpulse.GridPulse.prototype.load = function(opts)
 {
 	this.track.load(opts, this.quality);
 }
 
-bkcore.hexgl.HexGL.prototype.initGameplay = function()
+bkcore.gridpulse.GridPulse.prototype.initGameplay = function()
 {
 	var self = this;
 
-	this.gameplay = new bkcore.hexgl.Gameplay({
+	this.gameplay = new bkcore.gridpulse.Gameplay({
 		mode: this.mode,
 		hud: this.hud,
 		shipControls: this.components.shipControls,
@@ -178,7 +178,7 @@ bkcore.hexgl.HexGL.prototype.initGameplay = function()
 	bkcore.Audio.volume('wind', 0.35);
 }
 
-bkcore.hexgl.HexGL.prototype.displayScore = function(f, l)
+bkcore.gridpulse.GridPulse.prototype.displayScore = function(f, l)
 {
 	this.active = false;
 
@@ -233,7 +233,7 @@ bkcore.hexgl.HexGL.prototype.displayScore = function(f, l)
 			}
 		}
 		// ladder record
-		var p = bkcore.hexgl.Ladder.global[t][d][bkcore.hexgl.Ladder.global[t][d].length-2];
+		var p = bkcore.gridpulse.Ladder.global[t][d][bkcore.gridpulse.Ladder.global[t][d].length-2];
 		if(p != undefined && p['score'] > f)
 		{
 			dh != undefined && (dh.innerHTML = "You made it to the HOF!");
@@ -263,14 +263,14 @@ bkcore.hexgl.HexGL.prototype.displayScore = function(f, l)
 	}
 
 	dd != undefined && (dd.innerHTML = d);
-	st != undefined && (st.href='http://twitter.com/share?text='+encodeURIComponent('I just scored '+dt.innerHTML+' in '+'Cityscape ('+d+') on #HexGL! Come try it and beat my record on '));
+	st != undefined && (st.href='http://twitter.com/share?text='+encodeURIComponent('I just scored '+dt.innerHTML+' in '+'Cityscape ('+d+') on #GridPulse! Come try it and beat my record on '));
 	sf != undefined && (sf.href='http://www.facebook.com/sharer.php?s=100'
-		+'&p[title]='+encodeURIComponent('I just scored '+dt.innerHTML+' in '+'Cityscape ('+d+') on HexGL!')
-		+'&p[summary]='+encodeURIComponent('HexGL is a futuristic racing game built by Thibaut Despoulain (BKcore) using HTML5, Javascript and WebGL. Come challenge your friends on this fast-paced 3D game!')
+		+'&p[title]='+encodeURIComponent('I just scored '+dt.innerHTML+' in '+'Cityscape ('+d+') on GridPulse!')
+		+'&p[summary]='+encodeURIComponent('GridPulse is a futuristic racing game built by Thibaut Despoulain (BKcore) using HTML5, Javascript and WebGL. Come challenge your friends on this fast-paced 3D game!')
 		+'&p[url]='+encodeURIComponent('http://hexgl.bkcore.com')
 		+'&p[images][0]='+encodeURIComponent('http://hexgl.bkcore.com/image.png'));
 
-	bkcore.hexgl.Ladder.displayLadder('finish-ladder', t, d, 8);
+	bkcore.gridpulse.Ladder.displayLadder('finish-ladder', t, d, 8);
 
 	if(this.manager.get('game').objects.lowFPS >= 999)
 		sl != undefined && (sl.innerHTML = 'Note: Your framerate was pretty low, you should try a lesser graphic setting!');
@@ -280,7 +280,7 @@ bkcore.hexgl.HexGL.prototype.displayScore = function(f, l)
 	dc.style.display = 'block';
 }
 
-bkcore.hexgl.HexGL.prototype.initRenderer = function()
+bkcore.gridpulse.GridPulse.prototype.initRenderer = function()
 {
 	var renderer = new THREE.WebGLRenderer({
 		antialias: false,
@@ -308,10 +308,10 @@ bkcore.hexgl.HexGL.prototype.initRenderer = function()
 	this.manager = new bkcore.threejs.RenderManager(renderer);
 }
 
-bkcore.hexgl.HexGL.prototype.initHUD = function()
+bkcore.gridpulse.GridPulse.prototype.initHUD = function()
 {
 	if(!this.displayHUD) return;
-	this.hud = new bkcore.hexgl.HUD({
+	this.hud = new bkcore.gridpulse.HUD({
 		width: this.width,
 		height: this.height,
 		font: "BebasNeueRegular",
@@ -322,7 +322,7 @@ bkcore.hexgl.HexGL.prototype.initHUD = function()
 	this.containers.overlay.appendChild(this.hud.canvas);
 }
 
-bkcore.hexgl.HexGL.prototype.initGameComposer = function()
+bkcore.gridpulse.GridPulse.prototype.initGameComposer = function()
 {
 	var renderTargetParameters = { minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, format: THREE.RGBFormat, stencilBuffer: false };
 	var renderTarget = new THREE.WebGLRenderTarget( this.width, this.height, renderTargetParameters );
@@ -381,7 +381,7 @@ bkcore.hexgl.HexGL.prototype.initGameComposer = function()
 		this.composers.game.addPass( effectScreen );
 }
 
-bkcore.hexgl.HexGL.prototype.createMesh = function(parent, geometry, x, y, z, mat)
+bkcore.gridpulse.GridPulse.prototype.createMesh = function(parent, geometry, x, y, z, mat)
 {
 	geometry.computeTangents();
 
@@ -399,7 +399,7 @@ bkcore.hexgl.HexGL.prototype.createMesh = function(parent, geometry, x, y, z, ma
 	return mesh;
 }
 
-bkcore.hexgl.HexGL.prototype.tweakShipControls = function()
+bkcore.gridpulse.GridPulse.prototype.tweakShipControls = function()
 {
 	var c = this.components.shipControls;
 	if(this.difficulty == 1)

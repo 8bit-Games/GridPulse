@@ -1,0 +1,263 @@
+/**
+ * GridPulse UI Styles
+ * Modern, futuristic design for racing game menus
+ */
+
+/* Base UI Screen */
+.ui-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.ui-screen.hidden {
+  display: none;
+  opacity: 0;
+}
+
+/* Menu Content Container */
+.menu-content {
+  text-align: center;
+  padding: 40px;
+  background: rgba(10, 14, 39, 0.9);
+  border: 2px solid #00a2ff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 162, 255, 0.3);
+  max-width: 500px;
+  width: 90%;
+}
+
+/* Typography */
+.game-title {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 0 0 40px 0;
+  background: linear-gradient(90deg, #00a2ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(0, 162, 255, 0.5);
+  font-family: 'Arial Black', sans-serif;
+  letter-spacing: 4px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0 0 30px 0;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+h2 {
+  font-size: 36px;
+  margin: 0 0 30px 0;
+  color: #00a2ff;
+}
+
+/* Buttons */
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.menu-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #1a2340 0%, #0a0e27 100%);
+  border: 2px solid #00a2ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menu-button:hover {
+  background: linear-gradient(135deg, #2a3350 0%, #1a1f3a 100%);
+  border-color: #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.menu-button:active {
+  transform: translateY(0);
+}
+
+.menu-button.primary {
+  background: linear-gradient(135deg, #00a2ff 0%, #0080cc 100%);
+  border-color: #00ffff;
+}
+
+.menu-button.primary:hover {
+  background: linear-gradient(135deg, #00c2ff 0%, #00a2ff 100%);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+}
+
+/* Menu Info */
+.menu-info {
+  margin-top: 40px;
+  color: #8899aa;
+  font-size: 14px;
+}
+
+.menu-info p {
+  margin: 10px 0;
+}
+
+.version {
+  font-size: 12px;
+  color: #556677;
+}
+
+/* Loading Screen */
+.loading-content {
+  text-align: center;
+}
+
+.loading-bar {
+  width: 300px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00a2ff;
+  border-radius: 5px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+.loading-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00a2ff, #00ffff);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.loading-text {
+  color: #8899aa;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* Settings */
+.settings-group {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.settings-group label {
+  display: block;
+  color: #8899aa;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.settings-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background: rgba(10, 14, 39, 0.8);
+  color: #fff;
+  border: 2px solid #00a2ff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.settings-group select:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.settings-group input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Results Screen */
+.results-stats {
+  margin: 30px 0;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 10px 0;
+  background: rgba(0, 162, 255, 0.1);
+  border: 1px solid #00a2ff;
+  border-radius: 5px;
+}
+
+.result-label {
+  color: #8899aa;
+  font-size: 16px;
+}
+
+.result-value {
+  color: #00ffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-content {
+    padding: 20px;
+  }
+
+  .game-title {
+    font-size: 48px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .menu-button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .loading-bar {
+    width: 200px;
+  }
+}
+
+/* Animations */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 162, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+}
+
+.menu-content {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Focus states */
+.menu-button:focus,
+.settings-group select:focus {
+  outline: 2px solid #00ffff;
+  outline-offset: 2px;
+}

@@ -1,17 +1,17 @@
  /*
- * HexGL
+ * GridPulse
  * @author Thibaut 'BKcore' Despoulain <http://bkcore.com>
  * @license This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License. 
  *          To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
  */
 
 var bkcore = bkcore || {};
-bkcore.hexgl = bkcore.hexgl || {};
+bkcore.gridpulse = bkcore.gridpulse || {};
 
-bkcore.hexgl.Ladder = {};
-bkcore.hexgl.Ladder.global = {};
+bkcore.gridpulse.Ladder = {};
+bkcore.gridpulse.Ladder.global = {};
 
-bkcore.hexgl.Ladder.load = function(callback)
+bkcore.gridpulse.Ladder.load = function(callback)
 {
 	var s = encodeURIComponent(window.location.href);
 	bkcore.Utils.request("nothing", false, function(req)
@@ -30,7 +30,7 @@ bkcore.hexgl.Ladder.load = function(callback)
 	});
 }
 
-bkcore.hexgl.Ladder.displayLadder = function(id, track, mode, num)
+bkcore.gridpulse.Ladder.displayLadder = function(id, track, mode, num)
 {
 	var d = document.getElementById(id);
 	if(d == undefined || bkcore.Ladder.global[track] == undefined || !bkcore.Ladder.global[track][mode] == undefined)

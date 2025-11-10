@@ -1,15 +1,15 @@
 /*
- * HexGL
+ * GridPulse
  * @author Thibaut 'BKcore' Despoulain <http://bkcore.com>
  * @license This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License.
  *          To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
  */
 
 var bkcore = bkcore || {};
-bkcore.hexgl = bkcore.hexgl || {};
-bkcore.hexgl.tracks = bkcore.hexgl.tracks || {};
+bkcore.gridpulse = bkcore.gridpulse || {};
+bkcore.gridpulse.tracks = bkcore.gridpulse.tracks || {};
 
-bkcore.hexgl.tracks.Cityscape = {
+bkcore.gridpulse.tracks.Cityscape = {
 
 	lib: null,
 	materials: {},
@@ -422,7 +422,7 @@ bkcore.hexgl.tracks.Cityscape = {
 			ship.add(boosterLight);
 
 		// SHIP CONTROLS
-		var shipControls = new bkcore.hexgl.ShipControls(ctx);
+		var shipControls = new bkcore.gridpulse.ShipControls(ctx);
 		shipControls.collisionMap = this.lib.get("analysers", "track.cityscape.collision");
 		shipControls.collisionPixelRatio = 2048.0 / 6000.0;
 		shipControls.collisionDetection = true;
@@ -451,7 +451,7 @@ bkcore.hexgl.tracks.Cityscape = {
 			fxParams.textureSpark = this.lib.get("textures", "spark");
 			fxParams.useParticles = true;
 		}
-		ctx.components.shipEffects = new bkcore.hexgl.ShipEffects(fxParams);
+		ctx.components.shipEffects = new bkcore.gridpulse.ShipEffects(fxParams);
 
 		// TRACK
 		var track = ctx.createMesh(scene, this.lib.get("geometries", "track.cityscape"), 0, -5, 0, this.materials.track);
@@ -465,7 +465,7 @@ bkcore.hexgl.tracks.Cityscape = {
 		startbanner.doubleSided = true;
 
 		// CAMERA
-		ctx.components.cameraChase = new bkcore.hexgl.CameraChase({
+		ctx.components.cameraChase = new bkcore.gridpulse.CameraChase({
 			target: ship,
 			camera: camera,
 			cameraCube: ctx.manager.get("sky").camera,

@@ -1,14 +1,14 @@
  /*
- * HexGL
+ * GridPulse
  * @author Thibaut 'BKcore' Despoulain <http://bkcore.com>
  * @license This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License. 
  *          To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
  */
 
 var bkcore = bkcore || {};
-bkcore.hexgl = bkcore.hexgl || {};
+bkcore.gridpulse = bkcore.gridpulse || {};
 
-bkcore.hexgl.Gameplay = function(opts)
+bkcore.gridpulse.Gameplay = function(opts)
 {
 	var self = this;
 
@@ -103,7 +103,7 @@ bkcore.hexgl.Gameplay = function(opts)
 	};
 }
 
-bkcore.hexgl.Gameplay.prototype.simu = function()
+bkcore.gridpulse.Gameplay.prototype.simu = function()
 {
 	this.lapTimes = [92300, 91250, 90365];
 	this.finishTime = this.lapTimes[0]+this.lapTimes[1]+this.lapTimes[2];
@@ -113,7 +113,7 @@ bkcore.hexgl.Gameplay.prototype.simu = function()
 	this.shipControls.active = false;
 }
 
-bkcore.hexgl.Gameplay.prototype.start = function(opts)
+bkcore.gridpulse.Gameplay.prototype.start = function(opts)
 {
 	this.finishTime = null;
 	this.score = null;
@@ -124,7 +124,7 @@ bkcore.hexgl.Gameplay.prototype.start = function(opts)
 
 	this.previousCheckPoint = this.track.checkpoints.start;
 
-	this.raceData = new bkcore.hexgl.RaceData(this.track.name, this.mode, this.shipControls);
+	this.raceData = new bkcore.gridpulse.RaceData(this.track.name, this.mode, this.shipControls);
 	if(this.mode == 'replay')
 	{
 		this.cameraControls.mode = this.cameraControls.modes.ORBIT;
@@ -155,7 +155,7 @@ bkcore.hexgl.Gameplay.prototype.start = function(opts)
 	}
 }
 
-bkcore.hexgl.Gameplay.prototype.end = function(result)
+bkcore.gridpulse.Gameplay.prototype.end = function(result)
 {
 	this.score = this.timer.getElapsedTime();
 	this.finishTime = this.timer.time.elapsed;
@@ -176,7 +176,7 @@ bkcore.hexgl.Gameplay.prototype.end = function(result)
 	}
 }
 
-bkcore.hexgl.Gameplay.prototype.update = function()
+bkcore.gridpulse.Gameplay.prototype.update = function()
 {
 	if(!this.active) return;
 
@@ -217,7 +217,7 @@ bkcore.hexgl.Gameplay.prototype.update = function()
 	}
 }
 
-bkcore.hexgl.Gameplay.prototype.checkPoint = function()
+bkcore.gridpulse.Gameplay.prototype.checkPoint = function()
 {
 	var x = Math.round(this.analyser.pixels.width/2 + this.shipControls.dummy.position.x * this.pixelRatio);
 	var z = Math.round(this.analyser.pixels.height/2 + this.shipControls.dummy.position.z * this.pixelRatio);

@@ -1,14 +1,14 @@
  /*
- * HexGL
+ * GridPulse
  * @author Thibaut 'BKcore' Despoulain <http://bkcore.com>
  * @license This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License. 
  *          To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
  */
 
 var bkcore = bkcore || {};
-bkcore.hexgl = bkcore.hexgl || {};
+bkcore.gridpulse = bkcore.gridpulse || {};
 
-bkcore.hexgl.RaceData = function(track, mode, shipControls)
+bkcore.gridpulse.RaceData = function(track, mode, shipControls)
 {
 	this.track = track;
 	this.mode = mode;
@@ -29,7 +29,7 @@ bkcore.hexgl.RaceData = function(track, mode, shipControls)
 	this._nq = new THREE.Quaternion();
 }
 
-bkcore.hexgl.RaceData.prototype.tick = function(time)
+bkcore.gridpulse.RaceData.prototype.tick = function(time)
 {
 	if(this.rateState == 1)
 	{
@@ -50,7 +50,7 @@ bkcore.hexgl.RaceData.prototype.tick = function(time)
 	this.rate++;
 }
 
-bkcore.hexgl.RaceData.prototype.applyInterpolated = function(time)
+bkcore.gridpulse.RaceData.prototype.applyInterpolated = function(time)
 {
 	while(this.seek < this.last && this.data[this.seek+1][0] < time)
 		++this.seek;
@@ -81,17 +81,17 @@ bkcore.hexgl.RaceData.prototype.applyInterpolated = function(time)
 	this.shipControls.teleport(this._p, this._q);
 }
 
-bkcore.hexgl.RaceData.prototype.reset = function()
+bkcore.gridpulse.RaceData.prototype.reset = function()
 {
 	this.seek = 0;
 }
 
-bkcore.hexgl.RaceData.prototype.export = function()
+bkcore.gridpulse.RaceData.prototype.export = function()
 {
 	return this.data;
 }
 
-bkcore.hexgl.RaceData.prototype.import = function(imp)
+bkcore.gridpulse.RaceData.prototype.import = function(imp)
 {
 	this.data = imp;
 	this.last = this.data.length-1;

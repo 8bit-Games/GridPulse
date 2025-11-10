@@ -1,14 +1,14 @@
  /*
- * HexGL
+ * GridPulse
  * @author Thibaut 'BKcore' Despoulain <http://bkcore.com>
  * @license This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License. 
  *          To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
  */
 
 var bkcore = bkcore || {};
-bkcore.hexgl = bkcore.hexgl || {};
+bkcore.gridpulse = bkcore.gridpulse || {};
 
-bkcore.hexgl.HUD = function(opts)
+bkcore.gridpulse.HUD = function(opts)
 {
 	var self = this;
 
@@ -73,7 +73,7 @@ bkcore.hexgl.HUD = function(opts)
 	this.maxStep = 2;
 };
 
-bkcore.hexgl.HUD.prototype.resize = function(w, h)
+bkcore.gridpulse.HUD.prototype.resize = function(w, h)
 {
 	this.width = w;
 	this.height = h;
@@ -81,7 +81,7 @@ bkcore.hexgl.HUD.prototype.resize = function(w, h)
 	this.canvas.height = h;
 }
 
-bkcore.hexgl.HUD.prototype.display = function(msg, duration)
+bkcore.gridpulse.HUD.prototype.display = function(msg, duration)
 {
 	this.messageTiming = 0;
 
@@ -99,27 +99,27 @@ bkcore.hexgl.HUD.prototype.display = function(msg, duration)
 	this.messageDuration = duration == undefined ? this.messageDurationD : duration*60;
 }
 
-bkcore.hexgl.HUD.prototype.updateLap = function(current, total)
+bkcore.gridpulse.HUD.prototype.updateLap = function(current, total)
 {
 	this.lap = current + this.lapSeparator + total;
 }
 
-bkcore.hexgl.HUD.prototype.resetLap = function()
+bkcore.gridpulse.HUD.prototype.resetLap = function()
 {
 	this.lap = "";
 }
 
-bkcore.hexgl.HUD.prototype.updateTime = function(time)
+bkcore.gridpulse.HUD.prototype.updateTime = function(time)
 {
 	this.time = this.timeSeparators[0] + time.m + this.timeSeparators[1] + time.s + this.timeSeparators[2] + time.ms + this.timeSeparators[3];
 }
 
-bkcore.hexgl.HUD.prototype.resetTime = function()
+bkcore.gridpulse.HUD.prototype.resetTime = function()
 {
 	this.time = "";
 }
 
-bkcore.hexgl.HUD.prototype.update = function(speed, speedRatio, shield, shieldRatio)
+bkcore.gridpulse.HUD.prototype.update = function(speed, speedRatio, shield, shieldRatio)
 {
 	var SCREEN_WIDTH = this.width;
 	var SCREEN_HEIGHT = this.height;

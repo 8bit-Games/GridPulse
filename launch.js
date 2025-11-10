@@ -7,8 +7,8 @@
   };
 
   init = function(controlType, quality, hud, godmode) {
-    var hexGL, progressbar;
-    hexGL = new bkcore.hexgl.HexGL({
+    var gridPulse, progressbar;
+    gridPulse = new bkcore.gridpulse.GridPulse({
       document: document,
       width: window.innerWidth,
       height: window.innerHeight,
@@ -22,15 +22,15 @@
       godmode: godmode,
       track: 'Cityscape'
     });
-    window.hexGL = hexGL;
+    window.gridPulse = gridPulse;
     progressbar = $('progressbar');
-    return hexGL.load({
+    return gridPulse.load({
       onLoad: function() {
         console.log('LOADED.');
-        hexGL.init();
+        gridPulse.init();
         $('step-3').style.display = 'none';
         $('step-4').style.display = 'block';
-        return hexGL.start();
+        return gridPulse.start();
       },
       onError: function(s) {
         return console.error("Error loading " + s + ".");

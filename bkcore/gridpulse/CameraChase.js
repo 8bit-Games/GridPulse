@@ -1,14 +1,14 @@
  /*
- * HexGL
+ * GridPulse
  * @author Thibaut 'BKcore' Despoulain <http://bkcore.com>
  * @license This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License. 
  *          To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
  */
 
 var bkcore = bkcore || {};
-bkcore.hexgl = bkcore.hexgl || {};
+bkcore.gridpulse = bkcore.gridpulse || {};
 
-bkcore.hexgl.CameraChase = function(opts)
+bkcore.gridpulse.CameraChase = function(opts)
 {
 	this.dir = new THREE.Vector3(0,0,1);
 	this.up = new THREE.Vector3(0,1,0);
@@ -35,7 +35,7 @@ bkcore.hexgl.CameraChase = function(opts)
 	this.time = 0.0;
 }
 
-bkcore.hexgl.CameraChase.prototype.update = function(dt, ratio)
+bkcore.gridpulse.CameraChase.prototype.update = function(dt, ratio)
 {
 	if(this.mode == this.modes.CHASE)
 	{
